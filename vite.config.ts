@@ -1,9 +1,9 @@
 import { defineConfig } from 'vite';
 
-// base must match the GitHub repository name so assets resolve at
-// https://<username>.github.io/GTA-Fable/
+// The site is served from the root of the custom domain (gtav.doofus.live),
+// so assets must resolve from /.
 export default defineConfig({
-  base: '/GTA-Fable/',
+  base: '/',
   build: {
     target: 'es2020',
     sourcemap: false,

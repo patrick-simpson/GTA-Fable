@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main, claude/gta-mobile-3d-prototype-i8qix8]
+    branches: [main, claude/gta-mobile-3d-prototype-i8qix8, claude/gtav-doofus-live-load-b71r6i]
   workflow_dispatch:
 
 permissions:
