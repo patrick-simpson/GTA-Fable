@@ -51,7 +51,7 @@ export function buildRoads(blocks: BlockInfo[], disposer: Disposer): THREE.Group
   }
 
   const groundGeo = disposer.geo(batch.build());
-  const groundMat = disposer.mat(new THREE.MeshLambertMaterial({ vertexColors: true }));
+  const groundMat = disposer.mat(new THREE.MeshLambertMaterial({ vertexColors: true, color: 0xffffff }));
   const ground = new THREE.Mesh(groundGeo, groundMat);
   ground.matrixAutoUpdate = false;
   group.add(ground);

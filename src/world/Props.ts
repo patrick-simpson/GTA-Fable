@@ -162,7 +162,7 @@ function mergeLampGeometry(disposer: Disposer): { geo: THREE.BufferGeometry; mat
   paintGeometry(head, PALETTE.lampHead);
 
   const merged = disposer.geo(mergeParts([pole, arm, head]));
-  const mat = disposer.mat(new THREE.MeshLambertMaterial({ vertexColors: true }));
+  const mat = disposer.mat(new THREE.MeshLambertMaterial({ vertexColors: true, color: 0xffffff }));
   return { geo: merged, mat };
 }
 
@@ -183,7 +183,8 @@ function benchGeometry(disposer: Disposer): THREE.BufferGeometry {
   legR.translate(0.65, 0.22, 0);
   paintGeometry(legR, PALETTE.lampPole);
 
-  return disposer.geo(mergeParts([seat, back, legL, legR]));
+  const merged = disposer.geo(mergeParts([seat, back, legL, legR]));
+  return merged;
 }
 
 function mergeParts(parts: THREE.BufferGeometry[]): THREE.BufferGeometry {

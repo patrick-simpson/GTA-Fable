@@ -80,7 +80,7 @@ export function buildBuildings(
   }
 
   const geo = disposer.geo(batch.build());
-  const mat = disposer.mat(new THREE.MeshLambertMaterial({ vertexColors: true }));
+  const mat = disposer.mat(new THREE.MeshLambertMaterial({ vertexColors: true, color: 0xffffff }));
   const mesh = new THREE.Mesh(geo, mat);
   mesh.matrixAutoUpdate = false;
   return mesh;
