@@ -1,0 +1,47 @@
+/** Flat hex color palette — the entire art direction lives here. */
+export const PALETTE = {
+  sky: 0x9fd4e8,
+  fog: 0x9fd4e8,
+
+  groundOutskirts: 0x6da06b,
+  asphalt: 0x3a3d46,
+  sidewalk: 0x9aa0a8,
+  lanePaint: 0xe8e4d8,
+  crosswalk: 0xdcd8cc,
+  grass: 0x5f9a5d,
+  plaza: 0xb8aF9e,
+  parkPath: 0xc2b8a4,
+
+  buildings: [
+    0xc96f5a, 0xd9a06b, 0xb8b2a6, 0x7e94a8, 0x8f7f9e,
+    0xa8553f, 0x6b8f8a, 0xc2b28a, 0x96655a, 0x5d7a96,
+  ] as const,
+  roofTrim: 0x4a4e58,
+  windowDark: 0x2c3440,
+  windowLit: 0xffe28a,
+
+  treeTrunk: 0x6e4b32,
+  treeLeaves: [0x4d8a4a, 0x5f9e50, 0x3f7a44] as const,
+  lampPole: 0x4a4e58,
+  lampHead: 0xfff2c0,
+  hydrant: 0xd0382e,
+  bench: 0x8a6a44,
+  fountain: 0x9aa6b0,
+  fountainWater: 0x5fa8c8,
+
+  carColors: [
+    0xd03b2e, 0x2e6fd0, 0xe8b820, 0x3aa860, 0xd8d8d8,
+    0x36363e, 0xc8642e, 0x7a3a8a, 0x4ab8c8, 0x903040,
+  ] as const,
+  taxiYellow: 0xf2c12e,
+  tire: 0x222633,
+  hubcap: 0x8a93a6,
+  glass: 0x9fc8d8,
+  headlight: 0xfff8d8,
+  taillight: 0xff3b30,
+  bumper: 0x4a4e58,
+
+  skinTones: [0xe8b890, 0xc88a5e, 0x8a5a3a, 0xf0c8a0] as const,
+  shirtColors: [0xd03b2e, 0x2e6fd0, 0x3aa860, 0xe8e8e8, 0x8a3a9a, 0xe8a020] as const,
+  pantsColors: [0x2c3440, 0x4a5568, 0x6e4b32, 0x36363e] as const,
+} as const;

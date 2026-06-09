@@ -1,0 +1,20 @@
+{
+  "name": "gta-fable",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Low-poly GTA-inspired open-world prototype for mobile browsers. Vite + TypeScript + Three.js, 100% procedural assets.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.170.0",
+    "typescript": "~5.6.3",
+    "vite": "^6.0.7"
+  }
+}
