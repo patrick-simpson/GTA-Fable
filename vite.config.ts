@@ -1,9 +1,10 @@
 import { defineConfig } from 'vite';
 
-// base must match the GitHub repository name so assets resolve at
-// https://<username>.github.io/GTA-Fable/
+// Relative base so the same build works at both
+// https://<username>.github.io/GTA-Fable/ and a custom domain root
+// (e.g. https://gtav.doofus.live/).
 export default defineConfig({
-  base: '/GTA-Fable/',
+  base: './',
   build: {
     target: 'es2020',
     sourcemap: false,
