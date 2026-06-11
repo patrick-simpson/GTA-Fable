@@ -5,6 +5,7 @@ on:
     branches: [main, claude/gta-mobile-3d-prototype-i8qix8]
   workflow_dispatch:
 
+# Workflow-level defaults — sync job overrides contents to write.
 permissions:
   contents: read
   pages: write
@@ -15,7 +16,24 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # Runs only on main: fast-forwards the deploy branch so the
+  # build+deploy jobs (which run only from that branch) are triggered.
+  sync:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: |
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git push origin HEAD:refs/heads/claude/gta-mobile-3d-prototype-i8qix8 --force
+
   build:
+    if: github.ref == 'refs/heads/claude/gta-mobile-3d-prototype-i8qix8'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,8 +41,6 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      # Switches the Pages site to "GitHub Actions" mode so the built app is
-      # served instead of the raw repository files.
       - uses: actions/configure-pages@v5
         with:
           enablement: true
@@ -35,6 +51,7 @@ jobs:
           path: dist
 
   deploy:
+    if: github.ref == 'refs/heads/claude/gta-mobile-3d-prototype-i8qix8'
     needs: build
     runs-on: ubuntu-latest
     environment:
