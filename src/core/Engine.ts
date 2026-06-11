@@ -38,12 +38,17 @@ export class Engine {
     );
     this.camera.position.set(0, 4, -8);
 
-    const hemi = new THREE.HemisphereLight(0xdfeeff, 0x55604f, 1.0);
+    // Night city: deep blue ambient + cool moonlight from above.
+    const hemi = new THREE.HemisphereLight(0x0a1428, 0x050810, 0.8);
     this.scene.add(hemi);
 
-    const sun = new THREE.DirectionalLight(0xfff4d8, 1.5);
-    sun.position.set(80, 140, 50);
-    this.scene.add(sun);
+    const moon = new THREE.DirectionalLight(0x4060c0, 0.7);
+    moon.position.set(-60, 180, 80);
+    this.scene.add(moon);
+
+    // Neon fill from below — gives buildings that pink/cyan underbelly glow.
+    const neonFill = new THREE.HemisphereLight(0xff00a0, 0x00ffe0, 0.35);
+    this.scene.add(neonFill);
 
     this.resize();
   }
